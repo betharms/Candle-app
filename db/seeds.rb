@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+Candle.destroy_all
+
+puts 'Creating 50 fake candles...'
+50.times do
+  candle = Candle.new(
+    name: Faker::Cannabis.strain,
+    description: Faker::Quote.famous_last_words
+  )
+  candle.save!
+end
+puts 'Finished!'
