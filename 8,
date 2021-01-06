@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20210105124617_add_price_to_candles.rb
