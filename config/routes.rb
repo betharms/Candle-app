@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'candles#index'
+  root to: 'pages#home'
 
   resources :candles
   resources :pages
