@@ -9,9 +9,9 @@ class CandlesController < ApplicationController
     @candle = Candle.find(params[:id])
   end
 
+  def edit
+  end
 end
-
-
 # a user has many carts
 # a cart has one user
 # a cart has many cart candles
