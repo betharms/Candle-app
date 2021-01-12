@@ -1,2 +1,20 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<h1>Cart show</h1>
+<ul>
+  <% @cart.cart_candles.each do |cart_candle| %>
+    <li>Item: <%= cart_candle.candle.name %> /
+      Price: <%= number_to_currency(cart_candle.candle.price) %> /
+      Quantity: <%= current_cart.quantity %> /
+      Total Price: <%= number_to_currency(cart_candle.total_price) %>
+    </li>
+    <!--     See cartCandles section below for explaination of cart_candle links -->
+    <ul>
+      <li>
+        <%= link_to "Add one", cart_candle_add_path(:id => cart_candle), method: :post %>
+        <%= link_to "Reduce one", cart_candle_reduce_path(:id => cart_candle), method: :post %>
+      </li>
+      </li>
+        <%= link_to "Remove item", cart_candle_path(cart_candle), method: :delete %>
+      </li>
+    </ul>
+  <% end %>
+</ul>
