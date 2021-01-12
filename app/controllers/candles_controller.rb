@@ -31,10 +31,9 @@ class CandlesController < ApplicationController
    end
 
    private
-   def candle_params
+    def candle_params
     params.require(:candle).permit(:name, :price)
    end
-
 
   # def show
   #   @candle = Candle.find(params[:id])

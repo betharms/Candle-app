@@ -1,3 +1,8 @@
-<h1><%= @candle.name %></h1>
-<h3><%= @candle.description %></h3>
+<h2>All Candles</h2>
 
+<%= @candle.each do |candle| %>
+  <p>Name: <%= candle.name%>; unit price of <%= number_to_currency(candle.price) %></p>
+  <p>
+    <%= link_to "Edit", edit_candle_path(candle) %> |
+  </p>
+<% end %>
