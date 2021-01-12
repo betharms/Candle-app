@@ -1,4 +1,4 @@
 class CartCandle < ApplicationRecord
-  has_many :carts
-  belongs_to :candle, dependent: :destroy
+  belongs_to :candle
+  belongs_to :cart
 end
