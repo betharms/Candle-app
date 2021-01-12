@@ -1,5 +1,10 @@
-<h1>ill take ya to the candle shop</h1>
+<h2>All Candles</h2>
 
-<% @candle.each do |candle|  %>
-<h2> <%= candle.name %> <%= candle.description %> </h2>
+<% @candle.each do |candle| %>
+  <p>Name: <%= candle.name%>; unit price of <%= number_to_currency(candle.price) %></p>
+  <p>
+    <%= link_to "Edit", edit_candle_path(candle) %> |
+    <%= link_to "Delete", candle_path(candle), method: :delete, data: {confirm: "Are you sure?"} %>
+    <%= button_to "Add #{candle.name} to cart", cart_candles_path(:candle_id => candle.id ) %>
+  </p>
 <% end %>
