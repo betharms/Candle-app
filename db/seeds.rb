@@ -19,3 +19,6 @@ puts 'Creating 50 fake candles...'
   candle.save!
 end
 puts 'Finished!'
+
+Cart.destroy_all
+puts "Total cart count: #{Cart.all.count}"
