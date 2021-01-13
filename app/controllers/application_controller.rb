@@ -4,13 +4,14 @@
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
+
   def current_cart
     if session[:cart_id]
       cart = Cart.find_by(:id => session[:cart_id])
       if cart.present?
         @current_cart = cart
       else
-        session[:cart_id] = nav-link
+        session[:cart_id] = nil
       end
     end
 
@@ -20,13 +21,9 @@
     end
   end
 
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :address, :email, :password])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, :email, :password])
   end
 
-
-
 end
-
