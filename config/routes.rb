@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   get 'cart_candles/:id', to: "create_candles#show", as: "cart_candle"
   delete "cart_candles/:id", to: "cart_candles#destroy"
 
-  resources :candles, only: [:index, :show, :edit]
+  resources :candles
+  resources :orders
   resources :pages
 
 
