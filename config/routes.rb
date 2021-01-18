@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   post 'cart_candles', to: 'cart_candle#create'
   get 'cart_candles/:id', to: "create_candles#show", as: "cart_candle"
   delete "cart_candles/:id", to: "cart_candles#destroy"
+  post 'cart_candles' => "cart_candles#create"
+  get 'cart_candles/:id' => "cart_candles#show", as: "line_item"
+  delete 'cart_candles/:id' => "cart_candles#destroy"
 
   resources :candles
   resources :orders

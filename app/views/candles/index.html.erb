@@ -10,4 +10,5 @@ button_to "Add to cart", cart_candles_path(:candle_id => candle.id)
   </p>
 <% end%>
 
-<%= link_to "New candle", new_candle_path
+<%= link_to "New candle", new_candle_path %>
+button_to "Add #{candle.name} to cart", cart_candles_path(:candle_id => candle.id)
